@@ -1,144 +1,41 @@
-usrinput = None
-inputlst = []
-prevResult = None
-run = False
-
-def addition(prevResult, run):
-    result = 0
-
-    if prevResult != None:
-        inputlst.append(prevResult)
-
-    print("Type any numbers you'd like to add together, then type run to perform the opperation")
-    while run == False:
-        usrInput = input()
-        try:
-            usrInput = int(usrInput)
-            inputlst.append(usrInput)
-        except ValueError:
-            usrInput = str(usrInput)
-
+def calculation(num1, operation, num2):
+    if num1 == None:
+        print("Please enter the first number in the operation")
+        num1 = float(input())
+    if (operation in ["addition", "add", "+"]):
+        num1 += num2
+        return num1
+    elif (operation in ["subtraction", "-", "minus"]):
+        num1 -= num2
+        return num1
+    elif (operation in ["multiplication", "multiply", "*", "x"]):
+        num1 *= num2
+        return num1
+    elif (operation in ["divide", "division", "/"]):
+        if (num2 == 0):
+            print ("Please don't attempt to divide by 0")
+            return None
+        num1 /= num2
+        return num1
+    else:
+          print("Plaese Enter a Valid Opperation")
+          return
     
-        if usrInput == "run":
-            run = True
-            break
+def script():
+    print("Please enter the operation you'd like to perform")
+    operation = input()
+    print("Please enter the number you'd like to perform the operation on")
+    num2 = float(input()) 
+    return operation, num2
 
-    if run == True:
-        for i in range(len(inputlst)):
-            result += inputlst[i]
-            prevResult = result
-        inputlst.clear()
-        print(result)
-        run = False
-        return prevResult
-
-def subtraction(prevResult, run):
-    result = 0
-
-    if prevResult != None:
-        inputlst.append(prevResult)
-
-    print("Type any numbers you'd like to subtract, then type run to perform the opperation")
-    while run == False:
-        usrInput = input()
-        try:
-            usrInput = int(usrInput)
-            inputlst.append(usrInput)
-        except ValueError:
-            usrInput = str(usrInput)
-
-    
-        if usrInput == "run":
-            run = True
-            break
-
-    if run == True:
-        result = inputlst[0]
-        for i in range(len(inputlst)-1):
-            result -= inputlst[i+1]
-            prevResult = result
-        inputlst.clear()
-        print(result)
-        run = False
-        return prevResult
-
-def multiplication(prevResult, run):
-    result = 0
-
-    print("Type any numbers you'd like to multiply, then type run to perform the opperation")
-    if prevResult != None:
-        inputlst.append(prevResult)
-
-    while run == False:
-        usrInput = input()
-        try:
-            usrInput = int(usrInput)
-            inputlst.append(usrInput)
-        except ValueError:
-            usrInput = str(usrInput)
-
-    
-        if usrInput == "run":
-            run = True
-            break
-
-    if run == True:
-        result = inputlst[0]
-        for i in range(len(inputlst)-1):
-            result *= inputlst[i+1]
-            prevResult = result
-        inputlst.clear()
-        print(result)
-        run = False
-        return prevResult
-
-def division(prevResult, run):
-    result = 0
-
-    if prevResult != None:
-        inputlst.append(prevResult)
-
-    print("Type any numbers you'd like to divide, then type run to perform the opperation")
-    while run == False:
-        usrInput = input()
-        try:
-            usrInput = int(usrInput)
-            inputlst.append(usrInput)
-        except ValueError:
-            usrInput = str(usrInput)
-
-    
-        if usrInput == "run":
-            run = True
-            break
-
-    if run == True:
-        result = inputlst[0]
-        for i in range(len(inputlst)-1):
-            result /= inputlst[i+1]
-            prevResult = result
-        inputlst.clear()
-        print(result)
-        run = False
-        return prevResult
-
-def clear():
-    inputlst.clear
-    prevResult = None
-    return prevResult
-
+print("Please enter the first number in the operation")
+num1 = float(input())
+operation, num2 = script()
 while True:
-    print("Type the opperation you'd wish to perform 'addition', subtraction', mutiplication or division, or their respective symbols you can type clear to clear the memory of your last result and exit to exit the program")
-    usrinput = str(input())
-    if usrinput == "addition" or "+":
-        prevResult = addition(prevResult, run)
-    if usrinput == "subtraction" or "-":
-        prevResult = subtraction(prevResult, run)
-    if usrinput == "multiplication" or "*":
-        prevResult = multiplication(prevResult, run)
-    if usrinput == "division" or "/":
-        prevResult = division(prevResult, run)
-    if usrinput == "clear":
-        prevResult = clear()
-    if usrinput == "exit":
+    num1 = calculation(num1, operation, num2)
+    print(num1)
+    print("Would you like to perform another operation on this number or exit")
+    reply = input()
+    if reply == "exit":
         exit()
+    operation, num2 = script()
