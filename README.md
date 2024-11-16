@@ -9,23 +9,23 @@ Refactoring Improvements
 
 In this refactored version, I focused on:
 
-    Code Optimization: I consolidated the operations into a single function (calculation), reducing repetition and improving maintainability.
-    Error Handling: I added proper checks for division by zero and invalid operations to enhance the user experience.
-    Input Validation: I included better validation for inputs to ensure that the user receives helpful messages if something goes wrong.
-    User Flow: The user flow is streamlined for more intuitive interaction, allowing users to perform multiple operations sequentially or exit the program.
+Code Optimization: I consolidated the operations into a single function (calculation), reducing repetition and improving maintainability.
+Error Handling: I added proper checks for division by zero and invalid operations to enhance the user experience.
+Input Validation: I included better validation for inputs to ensure that the user receives helpful messages if something goes wrong.
+User Flow: The user flow is streamlined for more intuitive interaction, allowing users to perform multiple operations sequentially or exit the program.
 
 Features
 
-    Addition: Performs the addition of two numbers.
-    Subtraction: Subtracts one number from another.
-    Multiplication: Multiplies two numbers together.
-    Division: Divides the first number by the second (with handling for division by zero).
-    Error Messages: Provides helpful feedback for invalid inputs, such as dividing by zero or entering an unrecognized operation.
+Addition: Performs the addition of two numbers.
+Subtraction: Subtracts one number from another.
+Multiplication: Multiplies two numbers together.
+Division: Divides the first number by the second (with handling for division by zero).
+Error Messages: Provides helpful feedback for invalid inputs, such as dividing by zero or entering an unrecognized operation.
 
 How to Use
 
-    Clone this repository to your local machine.
-    Open the Python file (calculator.py) in your preferred code editor or IDE.
-    Run the script, and follow the prompts to enter a number, select an operation, and enter a second number.
-    The program will display the result of the operation and prompt you to perform another operation or exit.
-    Type exit to end the program.
+Clone this repository to your local machine.
+Open the Python file (calculator.py) in your preferred code editor or IDE.
+Run the script, and follow the prompts to enter a number, select an operation, and enter a second number.
+The program will display the result of the operation and prompt you to perform another operation or exit.
+Type exit to end the program.
