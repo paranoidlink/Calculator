@@ -2,7 +2,9 @@
 
 A simple command-line calculator written in Python.
 
-This repository contains a refactored version of an earlier calculator project. The original implementation can still be found in the initial commit, making the repository a useful snapshot of how my approach to the same problem changed over time.
+This repository contains an earlier standalone calculator project. A later, more developed version of the calculator can be found in my [100 Days of Code - Python](https://github.com/paranoidlink/100-days-of-python) repository as the Day 10 project.
+
+The original implementation is also preserved in the initial commit, making this repository a useful snapshot of how my approach to the same problem changed over time.
 
 ## Features
 
@@ -27,7 +29,7 @@ The result of each calculation becomes the starting value for the next calculati
 
 ## Learning Focus
 
-The main purpose of this project was practising:
+The project provided practice with:
 
 - Functions
 - Conditional logic
